@@ -6,11 +6,30 @@ readme = "README.md"
 authors = [
     { name = "Sergio Poveda", email = "sf.poveda@uniandes.edu.co" }
 ]
-requires-python = ">=3.13"
-dependencies = []
+requires-python = ">=3.12, <3.13"
+dependencies = [
+    "geopandas>=1.2.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "obspy>=1.5.1",
+    "pandas>=3.1.1",
+    "scipy>=1.18.1",
+]
 
 [project.scripts]
 seismo-toolkit = "seismo_toolkit:main"
+
+[project.optional-dependencies]
+ml = [
+    "seisbench>=0.12.7",
+    "torch>=2.15.0",
+]
+viz = [
+    "dash>=4.5.0",
+    "dash-bootstrap-components>=2.0.4",
+    "plotly>=7.1.0",
+    "pygmt>=0.19.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.13.7,<0.14.0"]
